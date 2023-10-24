@@ -1,5 +1,8 @@
 from utils.myutis import getAPIData, putAPIData, deleteAPIData
 from utils.myconfigparser import *
+import logging
+LOGGER = logging.getLogger(__name__)
+
 
 #baseURI = 'https://petstore.swagger.io/v2/pet/'
 petID = '500'
@@ -21,7 +24,7 @@ def test_updatingPet():
         "status": "pending"
     }
     data, resp_status, timeTaken = putAPIData(url=baseURI, body=payload)
-
+    LOGGER.info(("API call was made"))
     assert data['id'] == int(petID)
     assert resp_status == 200
 
