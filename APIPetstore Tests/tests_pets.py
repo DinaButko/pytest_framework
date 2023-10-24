@@ -1,4 +1,4 @@
-from utils.myutis import getAPIData
+from utils.myutis import getAPIData, putAPIData
 from utils.myconfigparser import *
 
 #baseURI = 'https://petstore.swagger.io/v2/pet/'
@@ -12,3 +12,17 @@ def test_getPetById_response():
     assert rep_status == 200
     print("Time Taken:", timeTaken)
 
+
+# test updating a pet
+def test_updatingPet():
+    payload = {
+        "id": petID,
+        "name": "Freddie Nice",
+        "status": "pending"
+    }
+    data, resp_status, timeTaken = putAPIData(url=baseURI, body=payload)
+
+    assert data['id'] == int(petID)
+    assert resp_status == 200
+
+    print("Time Taken:", timeTaken)
