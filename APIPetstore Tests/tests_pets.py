@@ -1,8 +1,8 @@
-from utils.myutis import getAPIData, putAPIData
+from utils.myutis import getAPIData, putAPIData, deleteAPIData
 from utils.myconfigparser import *
 
 #baseURI = 'https://petstore.swagger.io/v2/pet/'
-petID = '200'
+petID = '500'
 baseURI = getPetAPIURL()
 def test_getPetById_response():
     url = baseURI + petID
@@ -26,3 +26,11 @@ def test_updatingPet():
     assert resp_status == 200
 
     print("Time Taken:", timeTaken)
+
+def test_deletePetById():
+    url = baseURI +petID
+    apikey = {'api_key' : 'apiKeys123'}
+    data, resp_status, timeTaken = deleteAPIData(url)
+    print(data)
+    assert data['message'] == int(petID)
+    assert resp_status == 200

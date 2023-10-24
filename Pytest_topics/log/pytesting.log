@@ -1,0 +1,4 @@
+INFO     Pytest_topics.test_logging:test_logging.py:6 Info logs
+WARNING  Pytest_topics.test_logging:test_logging.py:7 Warning logs
+ERROR    Pytest_topics.test_logging:test_logging.py:8 Error logs
+CRITICAL Pytest_topics.test_logging:test_logging.py:9 Critical Logs
