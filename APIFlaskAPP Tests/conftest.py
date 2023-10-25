@@ -1,5 +1,5 @@
 from utils.fileUtils import  getJsonFromFile
-from utils.apiUtils import  post_api_data, get_api_data
+from utils.apiUtils import  post_api_data
 from utils.myconfigparser import getFlaskBaseUrl
 import pytest
 loginJsonFile = 'loginValid.json'
